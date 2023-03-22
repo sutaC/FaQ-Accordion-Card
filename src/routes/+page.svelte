@@ -19,7 +19,7 @@
             <svelte:fragment slot="answer">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</svelte:fragment>
         </Faq>
         
-        <Faq>
+        <Faq hidden={false}>
             <svelte:fragment slot="question">What is the maximum file upload size?</svelte:fragment>
             <svelte:fragment slot="answer">No more than 2GB. All files in your account must fit your allotted storage space.</svelte:fragment>
         </Faq>
@@ -50,6 +50,37 @@
 
 <!-- ---  -->
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+    * {
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    :global(body) {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .card {
+        display: flex;
+
+        width: 40rem;
+        height: 30rem;
+    }
+
+    
+    img {
+        width: 100%;
+    }
+
+    .questions { 
+        width: 50%;
+    }
 
 
     footer {
@@ -59,5 +90,6 @@
         text-align: center;
         font-size: 10px;
     }
+    
 
 </style>
