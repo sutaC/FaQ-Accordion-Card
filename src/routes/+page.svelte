@@ -5,10 +5,17 @@
 
 <div class="card">
     <div class="images">
-        <div class="img-girl-container">
-            <img src="/illustration-woman-online-desktop.svg" alt="illustration-woman-online">
+        <div class="desktop">
+            <div class="img-girl-container">
+                <img src="/illustration-woman-online-desktop.svg" alt="illustration-woman-online">
+            </div>
+            <img src="/illustration-box-desktop.svg" alt="illustration-box" class="img-box">
         </div>
-        <img src="/illustration-box-desktop.svg" alt="illustration-box" class="img-box">
+        <div class="mobile">
+            <div class="img-girl-container">
+                <img src="/illustration-woman-online-mobile.svg" alt="illustration-woman-online">
+            </div>
+        </div>
     </div>
     <div class="questions">
 
@@ -63,7 +70,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
 
         height: 100vh;
 
@@ -78,7 +84,9 @@
         padding: 2rem;
 
         width: 55rem;
+        width: clamp(40%, 55rem, 100%);
         height: 30rem;
+        height: clamp(40%, 30rem, 70rem);
 
         border-radius: 1rem;
 
@@ -88,7 +96,7 @@
 
 
     .questions { 
-        width: 50%;
+        width: minmax(50%, 100%);
 
         padding-right: 2rem;
 
@@ -97,6 +105,7 @@
 
     .images {
         width: 50%;
+        height: minmax(20%, 100%);
     }
     
 
@@ -108,15 +117,14 @@
         user-select: none;
     }
 
-    .img-box {
-        width: 10rem;
 
-        z-index: 10;
+    .desktop > .img-box {
+        width: 10rem;
 
         transform: translate(-6.9rem, -13rem);
     }
 
-    .img-girl-container {
+    .desktop > .img-girl-container {
         transform: translate(-4.5rem, 2.5rem) scale(1.25);
 
         padding-bottom: 5rem;
@@ -127,12 +135,16 @@
         background-size: cover;
     }
 
-    .img-girl-container img {
+    .desktop > .img-girl-container img {
         object-fit: cover;
         object-position: -4.5rem 0;
         transform: translate(4.5rem, 1.5rem);
     }
 
+    
+    .mobile {
+        display: none;
+    }
 
 
     footer {
@@ -143,5 +155,42 @@
         font-size: 10px;
     }
     
+
+
+    /* Mobile */
+
+    @media (max-width: 950px) { 
+
+        .card {
+            flex-direction: column;
+        }
+
+        .images {
+            height: 20%;
+
+        }
+
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
+
+        .mobile .img-girl-container {
+            transform: translate(50%, 0) scale(1.8);
+
+            width: 10rem;
+
+            padding-bottom: 4.5rem;
+
+            background-image: url('/bg-pattern-mobile.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+    }
 
 </style>
