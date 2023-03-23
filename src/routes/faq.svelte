@@ -21,6 +21,11 @@
 <!-- ---  -->
 <style>
     
+    .card {
+        border-bottom: 1px solid hsl(240, 5%, 91%);
+    }
+
+
     .header {
         display: flex;
         align-items: center;
@@ -35,31 +40,34 @@
         width: 1rem;
         height: 0.8rem;
     }
-
+    
     p {
         font-size: 12px;
+        color: hsl(240, 6%, 50%);
     }
 
     .header > p {
         font-size: 0.9rem;
+        color: hsl(237, 12%, 33%);
     }
-
-
-
+    
+    
+    
     .hidden:hover {
         color: hsl(14, 88%, 65%);
     }
-
+    
     .hidden img {
         transform: rotate(180deg);
     }
-
+    
     .hidden > p {
         display: none;
     }
-
+    
     .card:not(.hidden) > .header > p {
         font-weight: 700;
+        color: hsl(238, 29%, 16%);
     }
 
 

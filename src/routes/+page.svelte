@@ -1,7 +1,5 @@
 <script>
     import Faq from "./faq.svelte"
-
-
 </script>
 <!-- ---  -->
 
@@ -56,6 +54,7 @@
 
     * {
         font-family: 'Kumbh Sans', sans-serif;
+        color: hsl(238, 29%, 16%);
     }
 
     :global(body) {
@@ -84,6 +83,7 @@
         border-radius: 1rem;
 
         background-color: white;
+        box-shadow: 0 0.65rem 0.65rem hsla(0, 0%, 0%, 0.3);
     }
 
 
