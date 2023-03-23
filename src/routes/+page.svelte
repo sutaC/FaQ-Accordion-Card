@@ -7,8 +7,10 @@
 
 <div class="card">
     <div class="images">
-        <img src="/illustration-box-desktop.svg" alt="illustration-box">
-        <img src="/illustration-woman-online-desktop.svg" alt="illustration-woman-online">
+        <div class="img-girl-container">
+            <img src="/illustration-woman-online-desktop.svg" alt="illustration-woman-online">
+        </div>
+        <img src="/illustration-box-desktop.svg" alt="illustration-box" class="img-box">
     </div>
     <div class="questions">
 
@@ -63,24 +65,74 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        height: 100vh;
+
+        background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
     }
 
 
     .card {
         display: flex;
+        gap: 2rem;
 
-        width: 40rem;
+        padding: 2rem;
+
+        width: 55rem;
         height: 30rem;
+
+        border-radius: 1rem;
+
+        background-color: white;
     }
 
-    
-    img {
-        width: 100%;
-    }
 
     .questions { 
         width: 50%;
+
+        padding-right: 2rem;
+
+        overflow: auto;
     }
+
+    .images {
+        width: 50%;
+    }
+    
+
+
+    /* Images positioning */
+
+    img {
+        width: 100%;
+        user-select: none;
+    }
+
+    .img-box {
+        width: 10rem;
+
+        z-index: 10;
+
+        transform: translate(-6.9rem, -13rem);
+    }
+
+    .img-girl-container {
+        transform: translate(-4.5rem, 2.5rem) scale(1.25);
+
+        padding-bottom: 5rem;
+
+        background-image: url('/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .img-girl-container img {
+        object-fit: cover;
+        object-position: -4.5rem 0;
+        transform: translate(4.5rem, 1.5rem);
+    }
+
 
 
     footer {
